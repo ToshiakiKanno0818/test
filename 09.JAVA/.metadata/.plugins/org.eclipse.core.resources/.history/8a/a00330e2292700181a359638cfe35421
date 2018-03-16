@@ -1,0 +1,12 @@
+package inputstrings;
+
+import java.io.IOException;
+
+public class InputStrings {
+
+	static void main(String[] args)throws IOException {
+		String s = "123";
+		int i = Integer.parseInt(s);
+	}
+
+}

@@ -1,0 +1,7 @@
+public class Person {
+	public String name = null;
+	public double phoneNumber = 0;
+	public String address = null;
+	public int age = 0;
+
+}
