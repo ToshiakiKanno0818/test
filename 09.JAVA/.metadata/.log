@@ -5806,3 +5806,9 @@ org.eclipse.core.internal.resources.ResourceException: リソース '/login/stru
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2018-03-16 15:47:33.482
 !MESSAGE リソース '/login/struts.sql' が存在しません。
+
+!ENTRY org.eclipse.ui 2 2 2018-03-16 17:51:06.701
+!MESSAGE Invalid preference category path: org.nodeclipse.enide.gradle.preferences.GradlePreferencePage (bundle: org.nodeclipse.enide.editors.gradle, page: org.nodeclipse.enide.editors.gradle.preferences.GradleEditorPreferencePage)
+
+!ENTRY org.eclipse.ui 4 4 2018-03-16 17:51:13.896
+!MESSAGE Conflicting handlers for org.eclipse.ui.navigate.backwardHistory: {ActionHandler(org.eclipse.ui.internal.dialogs.PreferencePageHistory$1@50797639)} vs {ActionHandler(org.eclipse.ui.internal.NavigationHistoryAction@1f596988)}
