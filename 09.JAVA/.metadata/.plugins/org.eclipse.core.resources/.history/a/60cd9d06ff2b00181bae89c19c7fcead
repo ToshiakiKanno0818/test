@@ -1,0 +1,21 @@
+public class Person{
+	private String name = null;
+	private int age = 0;
+
+	public void getNmae(String name){
+		this.name = name;
+	}
+
+	public String setName(){
+		return this.name;
+	}
+
+	public void getAge(int age){
+		this.age = age;
+	}
+
+
+	public int setAge(){
+		return this.age;
+	}
+}
