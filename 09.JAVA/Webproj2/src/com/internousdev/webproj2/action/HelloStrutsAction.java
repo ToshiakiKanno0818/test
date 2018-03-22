@@ -1,8 +1,9 @@
 package com.internousdev.webproj2.action;
 
 import com.internousdev.webproj2.dao.HelloStrutsDAO;
+import com.opensymphony.xwork2.ActionSupport;
 
-public class HelloStrutsAction {
+public class HelloStrutsAction extends ActionSupport {
 	public String execute(){
 		String ret = "ERROR";
 		HelloStrutsDAO dao = new HelloStrutsDAO();

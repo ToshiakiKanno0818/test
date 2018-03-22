@@ -12,4 +12,5 @@
 <fullyQualifiedTypeName name="com.sun.corba.se.pept.transport.Connection"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="com.internousdev.login.dto.LoginDTO"/>
+<fullyQualifiedTypeName name="com.mysql.jdbc.PreparedStatement"/>
 </qualifiedTypeNameHistroy>
