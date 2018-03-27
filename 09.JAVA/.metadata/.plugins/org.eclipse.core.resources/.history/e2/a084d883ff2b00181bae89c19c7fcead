@@ -1,6 +1,0 @@
-public class Test {
-	Person taro = new Person();
-	taro.setName("taro");
-	taro.setAge(20);
-
-}
