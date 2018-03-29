@@ -16,7 +16,7 @@
 
 	<!-- LoginAction -->
 	<action name="LoginAction" class="com.internousdev.template.action.LoginAction"	method="execute">
-		<result name="success">buyItem.jsp</result>
+		<result name="success">BuyItem.jsp</result>
 		<result name="error">home.jsp</result>
 	</action>
 
