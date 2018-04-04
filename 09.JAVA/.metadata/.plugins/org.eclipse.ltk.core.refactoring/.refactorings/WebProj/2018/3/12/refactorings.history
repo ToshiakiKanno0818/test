@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move source folder &apos;src&apos; to &apos;lib&apos;&#x0D;&#x0A;- 元のプロジェクト: &apos;WebProj&apos;&#x0D;&#x0A;- 宛先要素: &apos;lib&apos;&#x0D;&#x0A;- オリジナル要素: &apos;WebProj/src&apos;&#x0D;&#x0A;- リファクタリングされた要素の参照を更新" description="ソース・フォルダーを移動" element1="/src" flags="6" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveRoots" roots="1" stamp="1521442297515" target="/HelloServlet/WebContent/WEB-INF/lib" version="1.0"/>
-</session>
