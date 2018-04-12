@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>coha</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+        <script src="modal.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('.slider').bxSlider({
+                    auto:true,
+                    mode:"fade",
+                    speed:2000,
+                    SlideWidth:400
+                });
+            });
+        </script>
+        
+    </head>
+    
+    <body>
+        <!-- header cssで上部固定 -->
+        <header>
+            <ul class="inner">
+                <li>Top</li>
+                <li>Works</li>
+                <li>Oniline Store</li>
+                <li>About me</li>
+                <li>Contact</li>
+            </ul>
+        </header>
+        
+        
+        <main>    
+            <div class="contentsbox">
+                <h1>News</h1>
+                
+                <!-- モーダルウィンドウを開くボタン -->
+                <p><a href="#modal01" class="modalOpen"><img src="pic1.jpg"></a></p>
+
+                <!-- モーダルウィンドウ -->
+                <div class="modal" id="modal01">
+                    <div class="overLay modalClose"></div>
+
+                    <!-- モーダルウィンドウの中身 -->
+                    <div class="inner">
+                    モーダルウィンドウ
+                    <a href="" class="modalClose">Close</a>
+                    </div>
+                </div>
+
+            </div>
+                
+            
+            <div class="contentsbox">
+                <h1>Works</h1>
+                <div class="slideframe">
+                    <div class="slider">
+                        <div>
+                            <img src="furiyamanu">
+                        </div>
+                        <div>
+                            <img src="madoromi">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="modal-overlay"></div>
+            <div class="contentsbox">
+                <h1>Oniline Store</h1>
+            </div>
+            
+            <div class="contentsbox">
+                <h1>About me</h1>
+            </div>
+            
+            <div class="contentsbox">
+                <h1>Contact</h1>
+            </div>
+        
+        </main>
+        
+        <!-- fotter 外部リンク（アイコン画像） -->
+        <footer>
+            <ul class="sns">
+                <li>T</li>
+                <li>N</li>
+            </ul>
+        
+        </footer>
+    
+    
+    
+    </body>
