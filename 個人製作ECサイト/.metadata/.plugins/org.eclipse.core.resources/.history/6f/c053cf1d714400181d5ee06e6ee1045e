@@ -17,7 +17,7 @@ public class ProductAction extends ActionSupport implements SessionAware {
 
 
 //	商品番号
-	private String productId;
+	public String productId;
 
 //	個数
 	private int count;
@@ -39,9 +39,6 @@ public class ProductAction extends ActionSupport implements SessionAware {
 
 			session.put("count", count);
 			session.put("product_id", productId);
-
-			System.out.println(session.get("count"));
-			System.out.println(session.get("product_id"));
 
 			// 商品情報を取得
 			ProductDTO productDTO = productDAO.getProductInfo();

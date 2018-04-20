@@ -18,13 +18,9 @@
 </head>
 <body>
 
-
-
 	<s:form action="ProductAction">
-		<s:hidden name="productId" value="1"/>
+		<s:hidden name="session.product_id" value="1"/>
 		<s:submit value="product1"/>
-
-
 	</s:form>
 
 </body>

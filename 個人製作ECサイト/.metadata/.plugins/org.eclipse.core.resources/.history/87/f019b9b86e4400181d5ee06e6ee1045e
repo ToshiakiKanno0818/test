@@ -22,9 +22,8 @@
 
 	<s:form action="ProductAction">
 		<s:hidden name="productId" value="1"/>
+		<a href="<s:url action="ProductAction" />">product1</a>
 		<s:submit value="product1"/>
-
-
 	</s:form>
 
 </body>

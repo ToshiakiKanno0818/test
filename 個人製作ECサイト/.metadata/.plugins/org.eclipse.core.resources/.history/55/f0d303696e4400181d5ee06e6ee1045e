@@ -18,13 +18,11 @@
 </head>
 <body>
 
-
+	<a href="<s:url action="ProductAction" />"><s:hidden name="productId" value="1"/>product1</a>
 
 	<s:form action="ProductAction">
 		<s:hidden name="productId" value="1"/>
 		<s:submit value="product1"/>
-
-
 	</s:form>
 
 </body>
