@@ -1,0 +1,62 @@
+package com.internousdev.products.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.products.dao.CartDAO;
+import com.opensymphony.xwork2.ActionSupport;
+
+/**
+ *
+ * @author internous
+ *
+ */
+public class CartAction extends ActionSupport implements SessionAware {
+
+//	商品番号
+	private String user_id;
+
+//	商品番号
+	private String cart_product_id;
+
+//	個数
+	private int count;
+
+//	カートに格納する商品単価
+	private int cart_product_price;
+
+//	商品情報を格納
+	public Map<String,Object> session;
+
+	private String errorMassage;
+
+	public String execute() {
+			String result = SUCCESS;
+			CartDAO cartDAO = new CartDAO();
+
+				cartDAO.setCartInput(
+						session.put("cart_user_id", user_id),
+						session.put("cart_product_id", cart_product_id),
+						session.put("cart_count", count),
+						session.put("cart_product_total_price", cart_product_price * count)
+						);
+			return result;
+	}
+
+
+
+
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
+	public String getErrorMassage() {
+		return errorMassage;
+	}
+
+	public void setErrorMassage(String errorMassage) {
+		this.errorMassage = errorMassage;
+	}
+}

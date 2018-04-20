@@ -13,25 +13,11 @@ public class UserCreateCompleteDAO {
 	private Connection connection = dbConnector.getConnection();
 	private DateUtil dateUtil = new DateUtil();
 
-	private String sql = "INSERT INTO login_user_transaction (login_id, login_pass, user_name, user_namefirst, user_namelast, user_canafirst, user_canalast, user_postcode, user_prefecture, user_city, user_address, user_tel, user_mail, user_gender, insert_date) VALUES(?, ? ,?, ?, ?, ? ,?, ?, ?, ? ,?, ?, ? ,?, ?)";
+	private String sql = "INSERT INTO login_user_transaction (login_id,login_pass,user_name,user_namefirst,user_namelast,user_canafirst,user_canalast,user_postcode,user_prefecture,user_city,user_address,user_tel,user_mail,gender,insert_date) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 	public void cerateUser(String loginUserId, String loginUserPassword, String userName ,String nameFirst, String nameLast, String canaFirst, String canaLast, String postcode, String prefecture,  String city, String address, String tel, String mail, String gender) throws SQLException {
 
-		System.out.println(loginUserId);
-		System.out.println(loginUserPassword);
-		System.out.println(userName);
-		System.out.println(nameFirst);
-		System.out.println(nameLast);
-		System.out.println(canaFirst);
-		System.out.println(canaLast);
-		System.out.println(postcode);
-		System.out.println(prefecture);
-		System.out.println(city);
-		System.out.println(address);
-		System.out.println(tel);
-		System.out.println(mail);
-		System.out.println(gender);
-		System.out.println(dateUtil.getDate());
+
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);

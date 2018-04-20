@@ -1,0 +1,5 @@
+package com.internousdev.products.action;
+
+public class GoProductsAllAction {
+
+}
