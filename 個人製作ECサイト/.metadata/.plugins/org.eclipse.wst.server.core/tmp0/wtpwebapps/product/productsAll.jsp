@@ -18,14 +18,20 @@
 </head>
 <body>
 
+	<table border="1">
+			<tr>
+				<th>商品名</th>
+				<th>値段</th>
 
+			</tr>
+			<s:iterator value="productAllList">
+				<tr>
+					<td><s:property value="product_name" /></td>
+					<td><s:property value="product_price" /><span>円</span></td>
 
-	<s:form action="ProductAction">
-		<s:hidden name="productId" value="1"/>
-		<s:submit value="product1"/>
-
-
-	</s:form>
+				</tr>
+			</s:iterator>
+			</table>
 
 </body>
 </html>

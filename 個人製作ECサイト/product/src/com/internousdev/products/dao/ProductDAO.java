@@ -13,11 +13,12 @@ public class ProductDAO {
 	private Connection connection = dbConnector.getConnection();
 	private ProductDTO productDTO = new ProductDTO();
 
+
 	/**
 	 * 商品情報取得メソッド
 	 *
 	 * @return BuyItemDTO
-	 */
+*/
 	public ProductDTO getProductInfo() {
 
 		String sql = "SELECT id, product_name, product_price, product_discription FROM products_info_transaction";
@@ -39,6 +40,7 @@ public class ProductDAO {
 
 		return productDTO;
 	}
+
 
 	public ProductDTO getProductDTO() {
 		return productDTO;

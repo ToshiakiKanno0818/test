@@ -1,0 +1,54 @@
+package com.internousdev.products.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.internousdev.products.dto.ProductAllDTO;
+import com.internousdev.products.util.DBConnector;
+
+public class ProductAllDAO {
+
+	private DBConnector dbConnector = new DBConnector();
+	private Connection connection = dbConnector.getConnection();
+	private ProductAllDTO productAllDTO = new ProductAllDTO();
+
+
+	public ArrayList<ProductAllDTO> getProductAllInfo(String product_id) throws SQLException {
+		ArrayList<ProductAllDTO> productAllDTO = new ArrayList<ProductAllDTO>();
+		String sql = "SELECT id, product_name, product_price, product_discription FROM products_info_transaction";
+
+//		String sql = "SELECT ubit.id, iit.product_name, ubit.product_price, lit.product_discription FROM user_buy_item_transaction ubit LEFT JOIN item_info_transaction iit ON ubit.item_transaction_id = iit.id where ubit.item_transaction_id  = ? AND ubit.user_master_id  = ? ORDER BY insert_date DESC";
+
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, product_id);
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while(resultSet.next()) {
+				ProductAllDTO dto = new ProductAllDTO();
+				dto.setId(resultSet.getString("product_id"));
+				dto.setProductName(resultSet.getString("product_name"));
+				dto.setProductName(resultSet.getString("product_price"));
+				dto.setProductDiscription(resultSet.getString("product_discription"));
+				productAllDTO.add(dto);
+
+			}
+
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			connection.close();
+		}
+
+		return productAllDTO;
+	}
+
+
+	public ProductAllDTO getProductDTO() {
+		return productAllDTO;
+	}
+}

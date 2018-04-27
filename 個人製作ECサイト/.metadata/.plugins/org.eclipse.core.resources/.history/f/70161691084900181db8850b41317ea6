@@ -1,0 +1,127 @@
+body{
+    background-color: white;
+    text-align: center;
+}
+
+
+
+/* ヘッダー */
+
+header{
+    width:100%;
+    background-color: rgba( 0, 0, 0, 0.8 );
+    color:black;
+    height: 40px;
+    text-align: center;
+    position: fixed;
+}
+
+header ul{
+    text-align: center;
+    font-size: 0;
+}
+
+header ul li{
+    width:8%;
+    display: inline-block;
+    list-style:none;
+    color:black;
+    font-size:12px;
+    margin-top:10px;
+}
+
+
+/* メイン */
+
+main{
+    text-align: center;
+    width:100%;
+    padding-top:40px;
+}
+
+.contentsbox{
+    width:100%;
+    border-bottom:3px dotted #ccc;
+}
+
+.contentsbox h1{
+    font-size:20px;
+    color:#666;
+}
+
+
+
+
+
+/* フッター */
+
+footer{
+    width:100%;
+    text-align: center;
+    font-size: 0;
+}
+
+footer ul li{
+    list-style:none;
+    display: inline;
+    font-size:12px;
+}
+
+
+
+
+/* スライドショー */
+
+.slideframe{
+    width:70%;
+    height:450px;
+    margin:auto;
+}
+
+
+
+/* モーダルウィンドウのスタイル */
+.modal {
+    position:absolute;
+    top:50px;
+    left:10%;
+    width:80%;
+    height:600px;
+    display:none;
+    border:2px solid #ccc;
+}
+
+/* オーバーレイのスタイル */
+.overLay {
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(255,255,255,0.7);
+    width:100%;
+    height:100vh;
+    z-index:10000;
+}
+
+/* モーダルウィンドウの中身のスタイル */
+.modal .modal-container {
+  position:absolute;
+  z-index:10001;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+
+.modal .modal-main{
+    width:100%;
+    height:500px;
+    border:1px solid red;
+    z-index:10002;
+}
+
+.modal .modal-footer{
+    width:100%;
+    height:100px;
+    border:1px solid blue;
+    text-align: center;
+    z-index:10003;
+}

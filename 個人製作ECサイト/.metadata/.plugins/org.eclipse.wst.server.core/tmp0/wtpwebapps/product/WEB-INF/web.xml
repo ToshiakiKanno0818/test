@@ -9,7 +9,7 @@
 <display-name>ecsite</display-name>
 
 <welcome-file-list>
-	<welcome-file>productsAll.jsp</welcome-file>
+	<welcome-file>home.jsp</welcome-file>
 </welcome-file-list>
 
 <filter>

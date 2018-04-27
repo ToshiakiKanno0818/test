@@ -1,15 +1,35 @@
 package com.internousdev.products.action;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.products.dto.ProductAllDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class GoProductsAllAction extends ActionSupport implements SessionAware {
+
+//	商品情報取得DAO
+//	private ProductAllDAO productAllDAO = new ProductAllDAO();
+
+//	商品情報格納DTO
+	public ArrayList<ProductAllDTO> productAllList = new ArrayList<ProductAllDTO>();
+
 	public Map<String, Object> session;
 
-	public String execute() {
+
+	public String execute() throws SQLException {
+
+			Iterator<ProductAllDTO> iterator = productAllList.iterator();
+
+			if (!(iterator.hasNext())) {
+				productAllList = null;
+			}
+
+
 		return SUCCESS;
 	}
 

@@ -1,0 +1,39 @@
+package com.internousdev.products.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.products.dao.ProductDAO;
+import com.internousdev.products.dto.ProductDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class GoProductsAllAction extends ActionSupport implements SessionAware {
+	private int productId;
+
+//	商品情報取得DAO
+	private ProductDAO productDAO = new ProductDAO();
+
+	public Map<String, Object> session;
+
+
+	public String execute() {
+
+		ProductDTO productDTO = productDAO.getProductInfo();
+		session.put("product_name",	productDTO.getProductName());
+		session.put("product_price", productDTO.getProductPrice());
+		session.put("product_discription", productDTO.getProductDiscription());
+
+
+		return SUCCESS;
+	}
+
+	public Map<String, Object> getSession() {
+		return this.session;
+	}
+
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+}

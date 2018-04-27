@@ -8,6 +8,7 @@ public class ProductDTO {
 	public String productDiscription;
 	private boolean productFlg = false;
 
+
 	public int getId() {
 		return id;
 	}
