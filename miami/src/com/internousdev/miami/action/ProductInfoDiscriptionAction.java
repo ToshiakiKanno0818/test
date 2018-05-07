@@ -19,8 +19,8 @@ public class ProductInfoDiscriptionAction extends ActionSupport implements Sessi
 	// お勧めリスト
 	public List<ProductInfoDTO> sugestList = new ArrayList<ProductInfoDTO>();
 
-	public String productId;
-	public String categoryId;
+	private String productId;
+	private String categoryId;
 
 	public String execute() {
 
@@ -35,15 +35,6 @@ public class ProductInfoDiscriptionAction extends ActionSupport implements Sessi
 		session.put("imageFilePath", productInfoDTO.getImageFilePath());
 		session.put("imageFileName", productInfoDTO.getImageFileName());
 
-		//		テストコード
-		//		System.out.println(session.get("productId"));
-		//		System.out.println(session.get("productName"));
-		//		System.out.println(session.get("productNameKana"));
-		//		System.out.println(session.get("productDiscription"));
-		//		System.out.println(session.get("categoryId"));
-		//		System.out.println(session.get("price"));
-		//		System.out.println(session.get("imageFilePath"));
-		//		System.out.println(session.get("imageFileName"));
 
 		// お勧めリスト情報取得
 		try {
@@ -57,6 +48,40 @@ public class ProductInfoDiscriptionAction extends ActionSupport implements Sessi
 
 	public Map<String, Object> getSession() {
 		return this.session;
+	}
+
+
+
+	public ProductInfoDiscriptionDAO getProductInfoDiscriptionDAO() {
+		return productInfoDiscriptionDAO;
+	}
+
+	public void setProductInfoDiscriptionDAO(ProductInfoDiscriptionDAO productInfoDiscriptionDAO) {
+		this.productInfoDiscriptionDAO = productInfoDiscriptionDAO;
+	}
+
+	public List<ProductInfoDTO> getSugestList() {
+		return sugestList;
+	}
+
+	public void setSugestList(List<ProductInfoDTO> sugestList) {
+		this.sugestList = sugestList;
+	}
+
+	public String getProductId() {
+		return productId;
+	}
+
+	public void setProductId(String productId) {
+		this.productId = productId;
+	}
+
+	public String getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
 	}
 
 	@Override

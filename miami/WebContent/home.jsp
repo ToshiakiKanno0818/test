@@ -17,8 +17,9 @@
 <body>
 
 	<s:form action="ProductInfoAction">
-		<s:submit value="Product"/>
+		<s:submit value="ProductInfo"/>
 	</s:form>
+
 
 </body>
 </html>

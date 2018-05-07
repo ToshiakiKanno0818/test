@@ -21,13 +21,15 @@ public class ProductInfoDAO {
 	 * @return
 	 * @throws SQLException
 	 */
-	public ArrayList<ProductInfoDTO> getProductListInfo() throws SQLException {
+	public ArrayList<ProductInfoDTO> getProductListInfo(String categoryId, String search) throws SQLException {
 		ArrayList<ProductInfoDTO> productInfoDTOList = new ArrayList<ProductInfoDTO>();
 
-		String sql = "SELECT product_id, product_name, product_name_kana, category_id, price, image_file_path, image_file_name FROM product_info";
+		String sql = "SELECT * FROM product_info";
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, categoryId);
+			preparedStatement.setString(2, search);
 
 			ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -36,6 +38,7 @@ public class ProductInfoDAO {
 				dto.setProductId(resultSet.getString("product_id"));
 				dto.setProductName(resultSet.getString("product_name"));
 				dto.setProductNameKana(resultSet.getString("product_name_kana"));
+				dto.setProductDiscription(resultSet.getString("product_discription"));
 				dto.setCategoryId(resultSet.getString("category_id"));
 				dto.setPrice(resultSet.getString("price"));
 				dto.setImageFilePath(resultSet.getString("image_file_path"));

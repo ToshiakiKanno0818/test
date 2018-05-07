@@ -16,6 +16,10 @@ import com.opensymphony.xwork2.ActionSupport;
 public class ProductInfoAction extends ActionSupport implements SessionAware {
 	public Map<String, Object> session;
 
+	private String categoryId = "0";
+
+	private String search = "";
+
 	//商品情報取得DAO
 	private ProductInfoDAO productInfoDAO = new ProductInfoDAO();
 
@@ -29,9 +33,7 @@ public class ProductInfoAction extends ActionSupport implements SessionAware {
 
 	public String execute() throws SQLException {
 
-		productInfoList = productInfoDAO.getProductListInfo();
-
-
+		productInfoList = productInfoDAO.getProductListInfo(categoryId, search);
 
 		// productListを9個づつ格納
 				PageNation change = new PageNation();
@@ -57,6 +59,30 @@ public class ProductInfoAction extends ActionSupport implements SessionAware {
 
 	public Map<String, Object> getSession() {
 		return this.session;
+	}
+
+	public String getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public String getSearch() {
+		return search;
+	}
+
+	public void setSearch(String search) {
+		this.search = search;
+	}
+
+	public int getPageSelect() {
+		return pageSelect;
+	}
+
+	public void setPageSelect(int pageSelect) {
+		this.pageSelect = pageSelect;
 	}
 
 	@Override

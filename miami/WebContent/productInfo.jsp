@@ -16,15 +16,27 @@
 <title>ProductInfo</title>
 
 <style>
-.product_container{
-	float:left;
-	width:33%;
-	border:1px solid red;
-	text-align:center;
+.product_container {
+	float: left;
+	width: 33%;
+	border: 1px solid red;
+	text-align: center;
 }
 </style>
 </head>
 <body>
+
+	<s:form action="ProductInfoAction">
+		calegoryId :
+		<select name="categoryId">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select>
+		<s:textfield name="search" value="" size="24" label="検索ワード" />
+		<s:submit value="検索" />
+	</s:form>
+
 	<!-- ↓引き出した商品情報を３×３で表示↓ -->
 	<s:iterator value="productInfoList">
 		<div class="product_container">
@@ -35,15 +47,14 @@
 					<s:param name="imageFileName" value="%{imageFileName}"/>
 					<s:param name="productName" value="%{productName}"/>
 					<s:param name="productNameKana" value="%{productNameKana}"/>
-					<s:param name="productDescription" value="%{productDescription}"/>
+					<s:param name="productDiscription" value="%{productDiscription}"/>
 					<s:param name="price" value="%{price}"/>
 					<s:param name="categoryId" value="%{categoryId}"/>
 				</s:url>">
-				<img src="<s:property value= 'imageFilePath' />"> <span><b>
+				<img src="<s:property value= 'imageFilePath' />"> <br> <span><b>
 						<s:property value="productName" />
-				</b> </span> <br> <span> <s:property value="productNameKana" /></span> <br>
-				<span> <s:property value="price" />円
-			</span> <br>
+				</b></span><br> <span> <s:property value="productNameKana" /></span><br>
+				<span><s:property value="price" />円</span> <br>
 			</a>
 		</div>
 	</s:iterator>
@@ -54,12 +65,10 @@
 		<s:submit value=" 次へ" />
 	</form>
 
-
 	<form action="ProductInfoAction">
 		<s:hidden name="pageSelect" value="%{pageSelect - 1}" />
 		<s:submit value=" 前へ" />
 	</form>
-
 
 </body>
 </html>

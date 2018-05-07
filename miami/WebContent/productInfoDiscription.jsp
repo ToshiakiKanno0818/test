@@ -29,6 +29,7 @@
 		<s:property value="session.productId" />
 		<s:property value="session.productName" />
 		<s:property value="session.productNameKana" />
+		<s:property value="session.productDiscription" />
 		<s:property value="session.price" />
 		<s:property value="session.imageFilePath" />
 		<s:property value="session.imageFileName" />

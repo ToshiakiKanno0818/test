@@ -1,6 +1,7 @@
 package com.internousdev.miami.dto;
 
 public class ProductInfoDTO {
+	public int id;
 	//商品ID
 	public String productId;
 	//商品名
@@ -17,6 +18,22 @@ public class ProductInfoDTO {
 	public String imageFilePath;
 	//画像名
 	public String imageFileName;
+	//発売日
+	public String releaseDate;
+	//ステータス
+	public int Status;
+	//登録日
+	public String registDate;
+	//更新日
+	public String UpdateDate;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getProductId() {
 		return productId;
@@ -81,5 +98,38 @@ public class ProductInfoDTO {
 	public void setImageFileName(String imageFileName) {
 		this.imageFileName = imageFileName;
 	}
+
+	public String getReleaseDate() {
+		return releaseDate;
+	}
+
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+
+	public int getStatus() {
+		return Status;
+	}
+
+	public void setStatus(int status) {
+		Status = status;
+	}
+
+	public String getRegistDate() {
+		return registDate;
+	}
+
+	public void setRegistDate(String registDate) {
+		this.registDate = registDate;
+	}
+
+	public String getUpdateDate() {
+		return UpdateDate;
+	}
+
+	public void setUpdateDate(String updateDate) {
+		UpdateDate = updateDate;
+	}
+
 
 }
