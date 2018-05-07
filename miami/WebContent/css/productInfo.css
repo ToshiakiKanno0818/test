@@ -1,0 +1,7 @@
+@CHARSET "UTF-8"
+.product_container{
+	float:left;
+	width:33%;
+	border:1px solid red;
+	text-align:center;
+}
