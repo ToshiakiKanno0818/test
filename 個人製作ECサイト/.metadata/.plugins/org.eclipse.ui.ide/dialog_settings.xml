@@ -5,6 +5,9 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\internousdev\Downloads\zen-master"/>
+			<item value="C:\Users\internousdev\Downloads\fifties-master\fifties-master"/>
+			<item value="C:\Users\internousdev\Desktop\miamiburger"/>
 			<item value="C:\Users\internousdev\Desktop\workspace\test\個人製作ECサイト\ecsite2"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">

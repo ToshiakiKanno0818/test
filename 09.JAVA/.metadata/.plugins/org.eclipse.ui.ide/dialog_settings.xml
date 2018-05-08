@@ -5,6 +5,7 @@
 		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\internousdev\Desktop\workspace\workspace-kanno\miamiburger"/>
 			<item value="C:\Users\internousdev\Desktop\退避"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
@@ -18,7 +19,7 @@
 	<section name="NewWizardAction">
 	</section>
 	<section name="ChooseWorkspaceDialogSettings">
-		<item value="327" key="DIALOG_X_ORIGIN"/>
+		<item value="-125" key="DIALOG_X_ORIGIN"/>
 		<item value="213" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
