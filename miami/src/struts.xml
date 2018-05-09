@@ -14,9 +14,9 @@
 			<result name="success">productInfo.jsp</result>
 		</action>
 
-		<!-- ProductInfoDiscriptionAction -->
-		<action name="ProductInfoDiscriptionAction" class="com.internousdev.miami.action.ProductInfoDiscriptionAction" method="execute">
-			<result name="success">productInfoDiscription.jsp</result>
+		<!-- ProductInfoDescriptionAction -->
+		<action name="ProductInfoDescriptionAction" class="com.internousdev.miami.action.ProductInfoDescriptionAction" method="execute">
+			<result name="success">productInfoDescription.jsp</result>
 		</action>
 
 	</package>

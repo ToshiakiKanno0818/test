@@ -16,6 +16,10 @@
 <title>ProductInfo</title>
 
 <style>
+.main_container {
+	min-width: 1280px;
+}
+
 .product_container {
 	float: left;
 	width: 33%;
@@ -25,23 +29,24 @@
 </style>
 </head>
 <body>
-
-	<s:form action="ProductInfoAction">
+	<div class="main_container">
+		<s:form action="ProductInfoAction">
 		calegoryId :
 		<select name="categoryId">
-			<option value="0">0</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-		</select>
-		<s:textfield name="search" value="" size="24" label="検索ワード" />
-		<s:submit value="検索" />
-	</s:form>
+				<option value="0">0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+			</select>
+			<s:textfield name="search" value="" size="24" label="検索ワード" />
+			<s:submit value="検索" />
+		</s:form>
 
-	<!-- ↓引き出した商品情報を３×３で表示↓（現在CSSで3列制御中のため、後変更予定） -->
-	<s:iterator value="productInfoList">
-		<div class="product_container">
-			<a href="<s:url action="ProductInfoDiscriptionAction">
+		<!-- 引き出した商品情報を 3×3 で表示（現在CSSで3列制御中） -->
+		<s:iterator value="productInfoList">
+			<div class="product_container">
+				<a
+					href="<s:url action="ProductInfoDescriptionAction">
 					<s:param name="productId" value="%{productId}"/>
 					<s:param name="imageFilePath" value="%{imageFilePath}"/>
 					<s:param name="imageFileName" value="%{imageFileName}"/>
@@ -51,31 +56,28 @@
 					<s:param name="price" value="%{price}"/>
 					<s:param name="categoryId" value="%{categoryId}"/>
 				</s:url>">
-				<img src="<s:property value= 'imageFilePath' />">
-				<br>
-				<span><b><s:property value="productName" /></b></span>
-				<br>
-				<span> <s:property value="productNameKana" /></span>
-				<br>
-				<span><s:property value="price" />円</span>
-				<br>
-			</a>
-		</div>
-	</s:iterator>
+					<img src="<s:property value= 'imageFilePath' />"> <br> <span><b><s:property
+								value="productName" /></b></span> <br> <span> <s:property
+							value="productNameKana" /></span> <br> <span><s:property
+							value="price" />円</span> <br>
+				</a>
+			</div>
+		</s:iterator>
 
-	<!-- ページセレクト -->
-	<s:if test="pageSelect > 0">
-		<form action="ProductInfoAction">
-			<s:hidden name="pageSelect" value="%{pageSelect - 1}" />
-			<s:submit value=" 前へ" />
-		</form>
-	</s:if>
+		<!-- ページセレクト（1ページ目では"前へ"を表示しない、最終ページでは"次へ"を表示しない） -->
+		<s:if test="pageSelect > 0">
+			<form action="ProductInfoAction">
+				<s:hidden name="pageSelect" value="%{pageSelect - 1}" />
+				<s:submit value=" 前へ" />
+			</form>
+		</s:if>
 
-	<s:if test="pageSelect < mainList.size() -1">
-		<form action="ProductInfoAction" method="post">
-			<s:hidden name="pageSelect" value="%{pageSelect + 1}" />
-			<s:submit value=" 次へ" />
-		</form>
-	</s:if>
+		<s:if test="pageSelect < mainList.size() -1">
+			<form action="ProductInfoAction" method="post">
+				<s:hidden name="pageSelect" value="%{pageSelect + 1}" />
+				<s:submit value=" 次へ" />
+			</form>
+		</s:if>
+	</div>
 </body>
 </html>

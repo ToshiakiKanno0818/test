@@ -16,6 +16,9 @@
 </head>
 <body>
 
+
+<jsp:include page="header.jsp" />
+
 	<s:form action="ProductInfoAction">
 		<s:submit value="ProductInfo"/>
 	</s:form>

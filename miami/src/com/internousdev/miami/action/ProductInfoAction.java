@@ -17,10 +17,13 @@ public class ProductInfoAction extends ActionSupport implements SessionAware {
 	public Map<String, Object> session;
 
 	// カテゴリID(初期値0で全検索)
-	private String categoryId = "0";
+	private int categoryId;
 
 	// 検索ワード(初期値空白)
-	private String search = "";
+	private String search;
+
+	//エラーメッセージ
+	private String errorMessage;
 
 	// 商品情報取得DAO
 	private ProductInfoDAO productInfoDAO = new ProductInfoDAO();
@@ -38,7 +41,21 @@ public class ProductInfoAction extends ActionSupport implements SessionAware {
 	// 以下実行メソッド
 	public String execute() throws SQLException {
 
-		productInfoList = productInfoDAO.getProductListInfo(categoryId, search);
+//		productInfoList = productInfoDAO.getProductListInfo(categoryId, search);
+
+		// 検索結果（カテゴリーなし(=0)のときとそうでない場合で呼び出すメソッドを変える）
+		if(categoryId == 0){
+			productInfoList = productInfoDAO.getProductListInfoAll(search);
+		}else{
+			productInfoList = productInfoDAO.getProductListInfo(categoryId, search);
+		}
+
+		if (productInfoList.size() == 0) {
+			errorMessage = "検索結果がありません";
+			session.put("productInfoList", productInfoList);
+		} else {
+			session.put("productInfoList", productInfoList);
+		}
 
 		// productListを9個づつ格納
 		PageNation change = new PageNation();
@@ -54,12 +71,25 @@ public class ProductInfoAction extends ActionSupport implements SessionAware {
 			}
 		}
 
+		// イテレーター
 		Iterator<ProductInfoDTO> iterator = productInfoList.iterator();
 		if (!(iterator.hasNext())) {
 			productInfoList = null;
 		}
 
 		return SUCCESS;
+	}
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
 	}
 
 	public ProductInfoDAO getProductInfoDAO() {
@@ -96,14 +126,6 @@ public class ProductInfoAction extends ActionSupport implements SessionAware {
 
 	public Map<String, Object> getSession() {
 		return this.session;
-	}
-
-	public String getCategoryId() {
-		return categoryId;
-	}
-
-	public void setCategoryId(String categoryId) {
-		this.categoryId = categoryId;
 	}
 
 	public String getSearch() {
