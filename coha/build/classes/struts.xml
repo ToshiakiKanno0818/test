@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<!-- Strutsの詳細設定 -->
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<!-- 対象のpackageを設定 -->
+	<package name="com.coha.artistsite.action"
+		extends="struts-default">
+
+		<!-- GoHomeAction -->
+		<action name="GoHomeAction" class="com.coha.artistsite.action.GoHomeAction" method="execute">
+			<result name="success">home.jsp</result>
+		</action>
+
+		<!-- WorksAction -->
+		<action name="WorksAction" class="com.coha.artistsite.action.WorksAction" method="execute">
+			<result name="success">works.jsp</result>
+		</action>
+
+		<!-- WorksDescriptionAction -->
+		<action name="WorksDescriptionAction" class="com.coha.artistsite.action.WorksDescriptionAction" method="execute">
+			<result name="success">works.jsp</result>
+		</action>
+	</package>
+</struts>
