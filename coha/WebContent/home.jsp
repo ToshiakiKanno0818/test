@@ -15,6 +15,8 @@
 	<title>coha</title>
 </head>
 <body>
-	<a href='<s:url action="WorksAction" />'>WorksAction</a>
+	<a href='<s:url action="WorksAction" />'>WorksAction</a><br>
+	<a href='<s:url action="BlogAction" />'>BlogAction</a>
+
 </body>
 </html>

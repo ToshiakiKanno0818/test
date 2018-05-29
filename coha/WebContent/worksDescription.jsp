@@ -12,7 +12,7 @@
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<title>coha</title>
+<title><s:property value="workName" /></title>
 </head>
 <body>
 

@@ -12,7 +12,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class WorksAction extends ActionSupport implements SessionAware {
 	private WorksDAO worksDAO = new WorksDAO();
-	private WorksDTO worksDTO = new WorksDTO();
+//	private WorksDTO worksDTO = new WorksDTO();
 
 	ArrayList<WorksDTO> worksList = new ArrayList<WorksDTO>();
 
@@ -20,16 +20,6 @@ public class WorksAction extends ActionSupport implements SessionAware {
 
 	public String execute() {
 		worksList = worksDAO.getWorksInfo();
-
-		session.put("id", worksDTO.getId());
-		session.put("workName", worksDTO.getWorkName());
-		session.put("workDescription", worksDTO.getWorkDescription());
-		session.put("updateYear", worksDTO.getUpdateYear());
-		session.put("updateMonth", worksDTO.getUpdateMonth());
-		session.put("updateDate", worksDTO.getUpdateDate());
-		session.put("imageFilePath", worksDTO.getImageFilePath());
-		session.put("imageFileName", worksDTO.getImageFileName());
-		session.put("musicFilePath", worksDTO.getMusicFilePath());
 
 		Iterator<WorksDTO> iterator = worksList.iterator();
 		if (!(iterator.hasNext())) {

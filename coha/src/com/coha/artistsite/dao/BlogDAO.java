@@ -5,35 +5,31 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import com.coha.artistsite.dto.WorksDTO;
+import com.coha.artistsite.dto.BlogDTO;
 import com.coha.artistsite.util.DBConnector;
 
-public class WorksDAO {
+public class BlogDAO {
 	private DBConnector db = new DBConnector();
 	private Connection con = db.getConnection();
 
-	ArrayList<WorksDTO> worksDTOList = new ArrayList<WorksDTO>();
+	ArrayList<BlogDTO> blogDTOList = new ArrayList<BlogDTO>();
 
-	public ArrayList<WorksDTO> getWorksInfo() {
-		String sql = "SELECT * FROM work_info";
+	public ArrayList<BlogDTO> getBlogInfo() {
+		String sql = "SELECT * FROM blog_info";
 
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 
 			while(rs.next()) {
-				WorksDTO dto = new WorksDTO();
+				BlogDTO dto = new BlogDTO();
 				dto.setId(rs.getInt("id"));
-				dto.setWorkName(rs.getString("work_name"));
-				dto.setWorkDescription(rs.getString("work_description"));
-				dto.setUpdateYear(rs.getInt("update_year"));
-				dto.setUpdateMonth(rs.getInt("update_month"));
-				dto.setUpdateDate(rs.getInt("update_date"));
-				dto.setImageFilePath(rs.getString("image_file_path"));
-				dto.setImageFileName(rs.getString("image_file_name"));
-				dto.setMusicFilePath(rs.getString("music_file_path"));
-//				worksDTO.setMusicFileName(rs.getString("music_file_name"));
-				worksDTOList.add(dto);
+				dto.setInsertDate(rs.getString("insert_date"));
+				dto.setUpdateDate(rs.getString("update_date"));
+				dto.setTitle(rs.getString("title"));
+				dto.setCategory(rs.getInt("category"));
+				dto.setNews(rs.getString("news"));
+				blogDTOList.add(dto);
 			}
 
 //			System.out.println(rs.getInt("id"));
@@ -48,7 +44,7 @@ public class WorksDAO {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		return worksDTOList;
+		return blogDTOList;
 	}
 
 }

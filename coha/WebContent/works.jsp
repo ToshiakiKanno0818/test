@@ -12,16 +12,20 @@
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<title>coha</title>
+<title>Works</title>
 </head>
 <body>
 	<a href='<s:url action="WorksDescriptionAction" />'>WorksDescriptionAction</a>
 
 	<s:iterator value="worksList">
-		<a href='<s:url action="WorksDescriptionAction"/>'>
-			<img src=<s:property value="session.imageFilePath" /> alt=<s:property value="session.imageFileName" />>
-			WorksDescriptionAction
-		</a>
+		<s:property value="workName" /><br>
+		<s:property value="workDescription" /><br>
+		<s:property value="updateYear" /><br>
+		<s:property value="updateMonth" /><br>
+		<s:property value="updateDate" /><br>
+		<s:property value="imageFileName" /><br>
+		<s:property value="imageFilePath" /><br>
+		<s:property value="musicFilePath" /><br>
 	</s:iterator>
 </body>
 </html>

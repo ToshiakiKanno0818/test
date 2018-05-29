@@ -7,8 +7,6 @@ public class WorksDTO {
 	private int updateYear;
 	private int updateMonth;
 	private int updateDate;
-	private int updateTime;
-	private int updateMinute;
 	private String imageFilePath;
 	private String imageFileName;
 	private String musicFilePath;
@@ -60,22 +58,6 @@ public class WorksDTO {
 
 	public void setUpdateDate(int updateDate) {
 		this.updateDate = updateDate;
-	}
-
-	public int getUpdateTime() {
-		return updateTime;
-	}
-
-	public void setUpdateTime(int updateTime) {
-		this.updateTime = updateTime;
-	}
-
-	public int getUpdateMinute() {
-		return updateMinute;
-	}
-
-	public void setUpdateMinute(int updateMinute) {
-		this.updateMinute = updateMinute;
 	}
 
 	public String getImageFilePath() {

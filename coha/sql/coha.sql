@@ -18,3 +18,4 @@ music_file_path varchar(32)
 );
 
 INSERT INTO work_info(work_name,work_description,update_year,update_month,update_date,image_file_path,image_file_name,music_file_path) VALUES("降りやまぬ雨に", "", 2017, 12, 29, "/img/pic1.ipg", "降りやまぬ雨に", "/music/降りやまぬ雨に.wav");
+INSERT INTO work_info(work_name,work_description,update_year,update_month,update_date,image_file_path,image_file_name,music_file_path) VALUES("微睡みの森は祈り溢れて", "", 2018, 04, 07, "/img/pic2.ipg", "微睡みの森は祈り溢れて", "/music/微睡みの森は祈り溢れて.wav");
