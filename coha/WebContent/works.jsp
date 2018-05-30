@@ -20,9 +20,7 @@
 	<s:iterator value="worksList">
 		<s:property value="workName" /><br>
 		<s:property value="workDescription" /><br>
-		<s:property value="updateYear" /><br>
-		<s:property value="updateMonth" /><br>
-		<s:property value="updateDate" /><br>
+		<s:property value="uploadDate" /><br>
 		<s:property value="imageFileName" /><br>
 		<s:property value="imageFilePath" /><br>
 		<s:property value="musicFilePath" /><br>

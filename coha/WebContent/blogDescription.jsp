@@ -14,28 +14,10 @@
 <title>Blog</title>
 </head>
 <body>
-
-	<!-- ブログリスト -->
-	<s:iterator value="blogList">
-		<a href='<s:url action="BlogDescriptionAction" >
-			<s:param name="id" value="%{id}"/>
-			<s:param name="insertDate" value="%{insertDate}"/>
-			<s:param name="updateDate" value="%{updateDate}"/>
-			<s:param name="title" value="%{title}"/>
-			<s:param name="category" value="%{category}"/>
-			<s:param name="news" value="%{news}"/></s:url>'>
-			<s:property value="title" />
-		</a>
-
 		<s:property value="insertDate" /><br>
 		<s:property value="updateDate" /><br>
-		<s:property value="title" /><br>
+		<h2><s:property value="title" /></h2><br>
 		<s:property value="category" /><br>
 		<s:property value="news" /><br>
-	</s:iterator>
-
-	<!-- ページング -->
-	<a href='<s:url action="BlogAction" />'>次へ</a>
-	<a href='<s:url action="BlogAction" />'>前へ</a>
 </body>
 </html>

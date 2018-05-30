@@ -26,9 +26,7 @@ public class WorksDAO {
 				dto.setId(rs.getInt("id"));
 				dto.setWorkName(rs.getString("work_name"));
 				dto.setWorkDescription(rs.getString("work_description"));
-				dto.setUpdateYear(rs.getInt("update_year"));
-				dto.setUpdateMonth(rs.getInt("update_month"));
-				dto.setUpdateDate(rs.getInt("update_date"));
+				dto.setUploadDate(rs.getString("upload_date"));
 				dto.setImageFilePath(rs.getString("image_file_path"));
 				dto.setImageFileName(rs.getString("image_file_name"));
 				dto.setMusicFilePath(rs.getString("music_file_path"));
@@ -36,11 +34,10 @@ public class WorksDAO {
 				worksDTOList.add(dto);
 			}
 
+//			テストコード
 //			System.out.println(rs.getInt("id"));
 //			System.out.println(rs.getString("work_description"));
-//			System.out.println(rs.getInt("update_year"));
-//			System.out.println(rs.getInt("update_month"));
-//			System.out.println(rs.getInt("update_date"));
+//			System.out.println(rs.geString("upload_date"));
 //			System.out.println(rs.getString("image_file_path"));
 //			System.out.println(rs.getString("image_file_name"));
 //			System.out.println(rs.getString("music_file_path"));

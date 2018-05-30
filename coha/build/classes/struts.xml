@@ -25,9 +25,15 @@
 			<result name="success">works.jsp</result>
 		</action>
 
+		<!-- ///////////////ブログ////////////// -->
 		<!-- BlogAction -->
 		<action name="BlogAction" class="com.coha.artistsite.action.BlogAction" method="execute">
 			<result name="success">blog.jsp</result>
+		</action>
+
+		<!-- BlogDescriptionAction -->
+		<action name="BlogDescriptionAction" class="com.coha.artistsite.action.BlogDescriptionAction" method="execute">
+			<result name="success">blogDescription.jsp</result>
 		</action>
 
 	</package>

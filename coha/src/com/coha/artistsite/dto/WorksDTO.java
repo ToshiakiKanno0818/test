@@ -4,9 +4,7 @@ public class WorksDTO {
 	private int id;
 	private String workName;
 	private String workDescription;
-	private int updateYear;
-	private int updateMonth;
-	private int updateDate;
+	private String uploadDate;
 	private String imageFilePath;
 	private String imageFileName;
 	private String musicFilePath;
@@ -36,28 +34,12 @@ public class WorksDTO {
 		this.workDescription = workDescription;
 	}
 
-	public int getUpdateYear() {
-		return updateYear;
+	public String getUploadDate() {
+		return uploadDate;
 	}
 
-	public void setUpdateYear(int updateYear) {
-		this.updateYear = updateYear;
-	}
-
-	public int getUpdateMonth() {
-		return updateMonth;
-	}
-
-	public void setUpdateMonth(int updateMonth) {
-		this.updateMonth = updateMonth;
-	}
-
-	public int getUpdateDate() {
-		return updateDate;
-	}
-
-	public void setUpdateDate(int updateDate) {
-		this.updateDate = updateDate;
+	public void setUploadDate(String uploadDate) {
+		this.uploadDate = uploadDate;
 	}
 
 	public String getImageFilePath() {
